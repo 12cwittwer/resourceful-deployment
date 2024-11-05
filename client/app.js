@@ -4,8 +4,13 @@ var EDITING;
 
 let coasterReviewWrapper = document.querySelector("section");
 
+const apiURL =
+  window.location.protocol === "file:"
+    ? "http://localhost:8080" //Local API server during deployment
+    : ""; // Production API
+
 function getLogs() {
-  fetch("http://localhost:8080/logs").then(function (response) {
+  fetch(apiURL + "/logs").then(function (response) {
     response.json().then(function (data) {
       LOGLIST = data;
       LOGLIST.sort((a, b) => {
@@ -63,7 +68,7 @@ function addLog(log) {
 
 function deleteLog(id) {
   let gridColumn = document.querySelector("#grid-column");
-  fetch("http://localhost:8080/logs/" + id, {
+  fetch(apiURL + "/logs/" + id, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -145,7 +150,7 @@ function updateLog() {
     "&ideas=" +
     encodeURIComponent(ideas.value);
 
-  fetch("http://localhost:8080/logs/" + id, {
+  fetch(apiURL + "/logs/" + id, {
     method: "PUT",
     body: data,
     headers: {
@@ -201,7 +206,7 @@ function addNewReview() {
   //    name=Tatsu&review=Best%20Flying%20Coaster
   //    EX: data += "&review=" + encodeURIComponent(input.value)
   // Send new review to the server
-  fetch("http://localhost:8080/rollercoasters", {
+  fetch(apiURL + "/rollercoasters", {
     method: "POST",
     body: data,
     headers: {
@@ -246,7 +251,7 @@ function addNewLog() {
     "&ideas=" +
     encodeURIComponent(ideas.value);
 
-  fetch("http://localhost:8080/logs", {
+  fetch(apiURL + "/logs", {
     method: "POST",
     body: data,
     headers: {
