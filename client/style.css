@@ -1,0 +1,300 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+:root {
+  --background-color: #301c33;
+  --header-color: #48354b;
+  --text-color: #dbdbdb;
+  --primary-color: #9a78a0;
+  --secondary-color: #736775;
+  --def-font: "Nunito", sans-serif;
+  --red: rgb(166, 0, 0);
+}
+html,
+body {
+  font-family: "Nunito", sans-serif;
+  color: var(--text-color);
+  min-height: 100vh;
+}
+.header {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-color);
+  box-shadow: white 0px 2px 5px;
+  z-index: 1;
+}
+#add-button {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease;
+}
+#add-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: var(--primary-color);
+}
+.add-icon {
+  height: 20px;
+  transition: transform 0.5s ease;
+}
+.rotated {
+  transform: rotate(360deg);
+}
+
+#grid-map {
+  width: 100%;
+  height: calc(100vh - 75px);
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+}
+#grid-column {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: scroll;
+  background-color: var(--background-color);
+}
+.log {
+  padding: 10px;
+  border-bottom: white;
+  transition: background-color 0.5s ease;
+}
+.log:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+.log-date {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.log-title {
+  font-weight: 700;
+  width: 100%;
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Hides the overflow text */
+  text-overflow: ellipsis;
+}
+#grid-display {
+  width: 100%;
+  height: calc(100vh - 75px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--background-color);
+  overflow-y: auto; /* Adjusted to vertical scroll */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  position: relative; /* Position relative to allow child absolute positioning */
+}
+.display-title {
+  text-align: center;
+}
+.sub-header {
+  font-weight: 500;
+  font-size: 22px;
+}
+.display-content {
+  padding-left: 20px;
+  font-weight: 300;
+  font-size: 18px;
+  text-indent: 2em;
+}
+.hidden {
+  display: none !important;
+}
+#modal {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  backdrop-filter: blur(8px);
+}
+#modal-box {
+  padding: 20px;
+  height: 80vh;
+  width: 90vw;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 15px;
+}
+textarea {
+  background-color: var(--background-color);
+  color: white;
+  width: 100%;
+  /* height: 50px; */
+  height: 100%;
+  padding: 10px;
+  border: 1px solid white;
+  font-family: var(--def-font);
+  resize: none;
+  border-radius: 8px;
+}
+#title-input {
+  background-color: var(--background-color);
+  color: white;
+  width: 30vw;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid white;
+  font-family: var(--def-font);
+  resize: none;
+  border-radius: 8px;
+}
+.input-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+.input-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 10px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+}
+.modal-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 10px;
+}
+#entry-button {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  background-color: var(--header-color);
+  border-radius: 8px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease;
+}
+#update-button {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  background-color: var(--header-color);
+  border-radius: 8px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease;
+}
+#entry-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: var(--primary-color);
+}
+#update-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: var(--primary-color);
+}
+#cancel-button {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  background-color: var(--red);
+  border-radius: 8px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease;
+}
+#cancel-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: var(--red);
+}
+hr {
+  width: 95%;
+  color: white;
+  fill: white;
+  border: 1px white solid;
+}
+.selected {
+  background-color: var(--primary-color) !important;
+}
+#change-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+#delete-button {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  gap: 5px;
+  background-color: var(--red);
+  border-radius: 8px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: transparent 2px solid;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+#delete-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: var(--red);
+  border-color: var(--red);
+}
+#edit-button {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  gap: 5px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border: transparent 2px solid;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+#edit-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: var(--background-color);
+  border-color: var(--background-color);
+}

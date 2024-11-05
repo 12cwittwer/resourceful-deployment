@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>Message Log</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Work Journal</h1>
+      <div id="add-button">
+        <svg
+          class="add-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="currentColor"
+        >
+          <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+        </svg>
+        <div>Add to Journal</div>
+      </div>
+    </div>
+    <div id="grid-map">
+      <div id="grid-column">
+        <!-- Headers and the beginning of text go here -->
+        <!-- <div class="log">
+          <div class="log-date">
+            <div class="date">09/23/2024</div>
+            <div class="time">18:24</div>
+          </div>
+          <div class="log-title">Fixed Bug in This Section So and So</div>
+        </div> -->
+      </div>
+      <div id="grid-display">
+        <h2 class="display-title">Fixed Bug in This Section So and So</h2>
+        <div class="sub-header">Summary</div>
+        <div class="display-content summary">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum. Discover More
+          Check out our new font generator and level up your social bios. Need
+          more? Head over to Glyphy for all the fancy fonts and cool symbols you
+          could ever imagine.
+        </div>
+        <div class="sub-header">Next To Do</div>
+        <div class="display-content todo">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum. Discover More
+          Check out our new font generator and level up your social bios. Need
+          more? Head over to Glyphy for all the fancy fonts and cool symbols you
+          could ever imagine.
+        </div>
+        <div class="sub-header">Questions</div>
+        <div class="display-content questions">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum. Discover More
+          Check out our new font generator and level up your social bios. Need
+          more? Head over to Glyphy for all the fancy fonts and cool symbols you
+          could ever imagine.
+        </div>
+        <div class="sub-header">Ideas</div>
+        <div class="display-content ideas">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum. Discover More
+          Check out our new font generator and level up your social bios. Need
+          more? Head over to Glyphy for all the fancy fonts and cool symbols you
+          could ever imagine.
+        </div>
+        <div id="change-buttons">
+          <div id="delete-button">
+            <svg
+              class="add-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="currentColor"
+            >
+              <path
+                d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+              />
+            </svg>
+            <div>Delete</div>
+          </div>
+          <div id="edit-button">
+            <svg
+              class="add-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="currentColor"
+            >
+              <path
+                d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"
+              />
+            </svg>
+            <div>Edit</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal" class="hidden">
+      <div id="modal-box">
+        <h2 id="entry-type">New Entry</h2>
+        <hr />
+        <div>
+          <div class="sub-header">Title:</div>
+          <input id="title-input" class="input-area" />
+        </div>
+        <div class="input-content">
+          <div class="input-column">
+            <div class="input-container">
+              <div class="sub-header">Summary:</div>
+              <textarea id="summary-input" class="input-area"></textarea>
+            </div>
+            <div class="input-container">
+              <div class="sub-header">Next To Do:</div>
+              <textarea id="todo-input" class="input-area"></textarea>
+            </div>
+          </div>
+          <div class="input-column">
+            <div class="input-container">
+              <div class="sub-header">Questions:</div>
+              <textarea id="questions-input" class="input-area"></textarea>
+            </div>
+            <div class="input-container">
+              <div class="sub-header">Ideas:</div>
+              <textarea id="ideas-input" class="input-area"></textarea>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="modal-buttons">
+          <div id="cancel-button">Cancel</div>
+          <div id="entry-button">Create Entry</div>
+          <div id="update-button" class="hidden">Update Entry</div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
