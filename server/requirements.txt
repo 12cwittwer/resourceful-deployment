@@ -1,4 +1,4 @@
 pip
-Flask
+flask
 requests
-sqlite3
+pysqlite3
